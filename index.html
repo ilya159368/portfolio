@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+        color: #201F26 !important;
+    }
+    .p1-section {
+        background: url('p1_image.png'), linear-gradient(116.94deg, #291B3A 12.01%, rgba(83, 43, 133, 0.82) 82.36%);
+        background-size: cover;
+    }
+    .p1 {
+        position: relative;
+        top: 15%;
+        color: white;
+        text-decoration: underline;
+        font-size: 8rem;
+        line-height: 10rem;
+        margin-left: 10%;
+    }
+    .p1-arrow {
+        border-top-right-radius: 0.75vw;
+        border-top-left-radius: 0.75vw;
+        height: 100vh;
+        background-color: #F5F5F5;
+        width: 1.25vw;
+        position: absolute;
+        top: -103%;
+        left: 3%;
+        animation: 4s linear .5s infinite forwards p1-arrow-animation;
+    }
+    .p1-arrow::after {
+        left: -108%;
+        bottom: -.5%;
+        content: "";
+        position: absolute;
+        z-index: 0;
+        display: block;
+        width: 4vw;
+        height: 4vw;
+        border-top: 1.2vw solid #F5F5F5;
+        border-left: 1.2vw solid #F5F5F5;
+        transform: rotate(225deg);
+    }
+    @keyframes p1-arrow-animation {
+        from {top: -100%;}
+        to {top: 100%}
+    }
+    .show {
+        animation: 2.7s ease-out 1s 1 forwards show-animation;
+    }
+    @keyframes show-animation {
+        from {opacity: 0;}
+        to {opacity: 100%;}
+    }
+    .p2-section {
+        background: linear-gradient(110.76deg, #1C0228 0%, #573D67 82.7%);
+    }
+    .p2-section .row, .p3-section .row {
+        margin-top: 7rem!important;
+    }
+    .p-block {
+        background-color: #F5F5F5;
+    }
+    .p2-header, .p3-header, .p4-header {
+        position: relative;
+        top: 7%;
+        font-size: 3.5rem;
+        width: 35%;
+        color: #272436;
+        font-weight: 600;
+        line-height: 4.2rem;
+    }
+    .p4-header {
+        font-size: 3rem;
+        width: 40%;
+    }
+    .text-transparent {
+        color: transparent;
+    }
+
+    .p2-info {
+        color: #F5F5F5;
+        opacity: 0;
+        font-size: 2.2rem;
+        border-radius: 5rem;
+    }
+    .p2-info-title {
+        font-size: 3rem;
+        border-top-left-radius: 5rem;
+        border-top-right-radius: 5rem;
+        border: #F5F5F5 0.3rem solid;
+        font-weight: 500;
+        /*background: linear-gradient(116.94deg, #291B3A 12.01%, rgba(83, 43, 133, 0.82) 82.36%);*/
+    }
+    .p2-info-text {
+        border-bottom-right-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        border-bottom: #F5F5F5 0.3rem solid;
+        border-left: #F5F5F5 0.3rem solid;
+        border-right: #F5F5F5 0.3rem solid;
+    }
+    .p2-info-text > ul li {
+        line-height: 2.5rem;
+    }
+    .fp-tableCell {
+        display: block;
+    }
+    .p3-section {
+        background: linear-gradient(114.44deg, #100C25 23.18%, rgba(25, 17, 77, 0.9272) 53.62%, rgba(37, 26, 115, 0.85) 85.9%);
+    }
+    .slide-left {
+        animation: 2.3s ease-out 1.7s 1 forwards slide-animation-left;
+    }
+    .slide-right {
+        animation: 2.7s ease-out 1s 1 forwards slide-animation-right;
+    }
+    /*.slide-out {*/
+    /*    animation: 1.5s ease-out 0s 1 forwards slide-animation-out;*/
+    /*}*/
+    @keyframes slide-animation-left {
+        from {transform: translateX(-200%)}
+        to {transform: translateX(0%)}
+    }
+    @keyframes slide-animation-right {
+        from {transform: translateX(-300%)}
+        to {transform: translateX(0%)}
+    }
+    /*@keyframes slide-animation-out {*/
+    /*    from {transform: translateX(0%)}*/
+    /*    to {transform: translateX(300%)}*/
+    /*}*/
+    .p3-info-left {
+        transform: translateX(-200%);
+    }
+    .p3-info-right {
+        transform: translateX(-300%);
+    }
+    .p3-info-right, .p3-info-left {
+        font-size: 3rem;
+        border-radius: 5rem;
+        color: #FFF;
+        vertical-align: middle;
+        border: #FFF 0.3rem solid;
+    }
+    .p4-section {
+        background: linear-gradient(105.88deg, #1F0E3A 0%, #301D50 15.13%, #2E5899 101.95%);
+    }
+    .selection {
+        background-color: #D9D9D9;
+    }
+    .selection-button {
+        background-color: #A9A9A9;
+        width: 30%;
+        transition: all .3s linear;
+    }
+    .selection-button:not(.selection-active):hover {
+        transform: translateY(-7%);
+    }
+    .selection-active {
+        background-color: #6E6E6E;
+    }
+    .p4-content {
+        width: fit-content;
+        max-width: 80%;
+        min-width: 60%;
+        display: none;
+        text-align: center;
+    }
+    .p4-content-active {
+        display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="fullpage">
+    <div class="section p1-section" data-anchor="p1">
+      <div class="p1-arrow"></div>
+      <div class="p1 w-50">
+        Плесский <br> Илья
+      </div>
+    </div>
+
+    <div class="section p2-section" data-anchor="p2">
+      <div class="p-block mx-auto px-4 py-2 rounded-pill text-center p2-header">&nbsp;<!-- Лето 2020 года --></div>
+      <div class="row w-75 mx-auto h-50">
+        <div class="col-4 p2-info">
+          <div class="w-100 p2-info-title h-25 pt-2 pb-1 text-center">Stepic </div>
+          <div class="w-100 p2-info-text h-75 py-4">
+            <ul class="m-0 px-5 pt-2">
+              <li class="mb-4">Основы программирования на языке Python</li>
+              <li>ООП на Pyhton</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="col-1"></div>
+        <div class="col-7 p2-info">
+          <div class="w-100 p2-info-title h-25 pt-2 pb-1 text-center">Самостоятельное обучение</div>
+          <div class="w-100 p2-info-text h-75 py-4">
+            <ul class="m-0 px-5 pt-2">
+              <li class="mb-4">Графические библиотеки втч. turtle</li>
+              <li>Простые игры на Pygame</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section p3-section" data-anchor="p3">
+      <div class="p-block mx-auto px-4 py-2 rounded-pill text-center p3-header">&nbsp;<!-- 2021 год --></div>
+      <div class="row w-75 mx-auto h-50">
+        <div class="col-5 p3-info-left d-flex align-items-center justify-content-center">
+          <span style="text-align: center">Поступление в Яндекс Лицей</span>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-5 p3-info-right d-flex align-items-center justify-content-center">
+          <span style="text-align: center">Изучение Django, Flask по книгам</span>
+        </div>
+      </div>
+    </div>
+    <div class="section p4-section" data-anchor="p4">
+      <div class="p-block mx-auto px-4 py-2 rounded-pill text-center p4-header mb-5">&nbsp;<!-- Первая половина 2022 --></div>
+      <div class="h-75 w-50 d-flex flex-column justify-content-between mx-auto" style="position: relative;  top: 7%">
+        <div class="h-75 p-block rounded-3 pt-2 pb-5 px-2 d-flex justify-content-center align-items-center">
+          <div class="p4-content p4-content-active" data-content-index="1">
+            <div class="h1">Яндекс&nbsp;Лицей год&nbsp;2 - Проект "Шахматы" на PyQT5</div>
+            <hr style="width: 100%; height: 0.2rem; color: #272727; opacity: 100%">
+            <a href="https://github.com/ilya159368/qtchess" class="h3">https://github.com/ilya159368/qtchess</a>
+          </div>
+          <div class="p4-content" data-content-index="2">
+            <div class="h1">Яндекс&nbsp;Лицей год&nbsp;2 - Проект "PyMogus" на PyQT5</div>
+            <hr style="width: 100%; height: 0.2rem; color: #272727; opacity: 100%">
+            <a href="https://github.com/ilya159368/PygameAmongUs" class="h3">https://github.com/ilya159368/PygameAmongUs</a>
+          </div>
+          <div class="p4-content" data-content-index="3">
+            <div class="h1">Яндекс&nbsp;Лицей год&nbsp;2 - Проект "PracticeHub" на PyQT5</div>
+            <hr style="width: 100%; height: 0.2rem; color: #272727; opacity: 100%">
+            <a href="https://github.com/ilya159368/PracticeHub" class="h3">https://github.com/ilya159368/PracticeHub</a>
+          </div>
+        </div>
+        <div class="p-block w-50 selection rounded-pill mx-auto d-flex px-4 py-2 justify-content-between" style="height: 10%">
+          <div class="selection-button rounded-pill selection-active" data-selection-index="1"></div>
+          <div class="selection-button rounded-pill" data-selection-index="2"></div>
+          <div class="selection-button rounded-pill" data-selection-index="3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+  <script>
+      function writeTextAnim(DOMElement, text, i) {
+          let speed = 100;
+          if (i < text.length) {
+            DOMElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(writeTextAnim, speed, DOMElement, text, i);
+          }
+      }
+
+      $(document).ready(function() {
+          $('#fullpage').fullpage({
+              anchors: ['p1', 'p2', 'p3', 'p4'],
+              afterLoad: function(origin, destination, direction, trigger) {
+                  if (origin === 'p2') {
+                      $('.p2-header')[0].innerHTML = '&nbsp;';
+                      $('.p2-header').removeClass('text-transparent');
+                      writeTextAnim($('.p2-header')[0], 'Лето 2020 года', 0);
+                      $('.p2-info').addClass('show');
+                  } else if (origin === 'p3') {
+                      // $('.p3-info-right, .p3-info-left').removeClass('slide-out')
+                      $('.p3-header')[0].innerHTML = '&nbsp;';
+                      $('.p3-header').removeClass('text-transparent');
+                      writeTextAnim($('.p3-header')[0], '2021 год', 0);
+                      $('.p3-info-left').addClass('slide-left');
+                      $('.p3-info-right').addClass('slide-right');
+                  } else if (origin === 'p4') {
+                      $('.p4-header')[0].innerHTML = '&nbsp;';
+                      $('.p4-header').removeClass('text-transparent');
+                      writeTextAnim($('.p4-header')[0], 'Первая половина 2022', 0);
+                  }
+              },
+              onLeave: function(origin) {
+                  console.log(origin)
+                  if (origin === 2) {
+                      $('.p2-header').addClass('text-transparent');
+                      $('.p2-info').removeClass('show');
+                  } else if (origin === 3) {
+                      $('.p3-header').addClass('text-transparent');
+                      $('.p3-info-left').removeClass('slide-left');
+                      $('.p3-info-right').removeClass('slide-right');
+                      // $('.p3-info-right, .p3-info-left').addClass('slide-out')
+                  } else if (origin === 4) {
+                      $('.p4-header').addClass('text-transparent');
+                  }
+              }
+          });
+          //-----------
+          $('.selection-button').click(function(e) {
+              if (!$(this).hasClass('.selection-active')) {
+                  $('.selection-active').removeClass('selection-active');
+                  $('.p4-content-active').removeClass('p4-content-active')
+                  let index = $(this).attr('data-selection-index');
+                  $(this).addClass('selection-active');
+                  $(`[data-content-index='${index}']`).addClass('p4-content-active');
+              }
+          });
+      });
+  </script>
+</body>
+</html>
