@@ -61,7 +61,7 @@
         background: linear-gradient(110.76deg, #1C0228 0%, #573D67 82.7%);
     }
     .p2-section .row, .p3-section .row {
-        margin-top: 7rem!important;
+        margin-top: 7rem;
     }
     .p-block {
         background-color: #F5F5F5;
@@ -70,14 +70,16 @@
         position: relative;
         top: 7%;
         font-size: 3.5rem;
-        width: 35%;
+        min-width: 35%;
+        width: fit-content;
         color: #272436;
         font-weight: 600;
         line-height: 4.2rem;
     }
     .p4-header {
         font-size: 3rem;
-        width: 40%;
+        min-width: 40%;
+        width: fit-content;
     }
     .text-transparent {
         color: transparent;
@@ -174,6 +176,42 @@
     .p4-content-active {
         display: block;
     }
+    a {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        hyphens: auto;
+    }
+    @media screen and (min-width: 0px) {
+        .w-mx-90 {
+            width: 90%;
+        }
+        .mt-mx-15p {
+            margin-top: 15% !important;
+        }
+        .word-break-mx-1 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            hyphens: manual;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .mt-lg-7p {
+            margin-top: 7% !important;
+        }
+        .w-lg-80 {
+            width: 75%;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .word-break-xl-0 {
+            overflow-wrap: normal;
+            word-wrap: normal;
+            word-break: normal;
+            hyphens: auto;
+        }
+    }
   </style>
 </head>
 <body>
@@ -187,10 +225,10 @@
 
     <div class="section p2-section" data-anchor="p2">
       <div class="p-block mx-auto px-4 py-2 rounded-pill text-center p2-header">&nbsp;<!-- Лето 2020 года --></div>
-      <div class="row w-75 mx-auto h-50">
-        <div class="col-4 p2-info">
-          <div class="w-100 p2-info-title h-25 pt-2 pb-1 text-center">Stepic </div>
-          <div class="w-100 p2-info-text h-75 py-4">
+      <div class="row w-lg-80 w-mx-90 mx-auto h-50 mt-mx-15p mt-lg-7p">
+        <div class="col-lg-4 col-mx-6 p2-info">
+          <div class="w-100 p2-info-title py-2 text-center">Stepic </div>
+          <div class="w-100 p2-info-text py-4 word-break-xl-0 word-break-mx-1">
             <ul class="m-0 px-5 pt-2">
               <li class="mb-4">Основы программирования на языке Python</li>
               <li>ООП на Pyhton</li>
@@ -198,10 +236,10 @@
           </div>
 
         </div>
-        <div class="col-1"></div>
-        <div class="col-7 p2-info">
-          <div class="w-100 p2-info-title h-25 pt-2 pb-1 text-center">Самостоятельное обучение</div>
-          <div class="w-100 p2-info-text h-75 py-4">
+        <div class="col-lg-1 col-mx-0"></div>
+        <div class="col-lg-7 col-mx-6 p2-info">
+          <div class="w-100 p2-info-title py-2 text-center">Самостоятельное обучение</div>
+          <div class="w-100 p2-info-text py-4 word-break-xl-0 word-break-mx-1" style="min-height: 50%">
             <ul class="m-0 px-5 pt-2">
               <li class="mb-4">Графические библиотеки втч. turtle</li>
               <li>Простые игры на Pygame</li>
@@ -225,7 +263,7 @@
     </div>
     <div class="section p4-section" data-anchor="p4">
       <div class="p-block mx-auto px-4 py-2 rounded-pill text-center p4-header mb-5">&nbsp;<!-- Первая половина 2022 --></div>
-      <div class="h-75 w-50 d-flex flex-column justify-content-between mx-auto" style="position: relative;  top: 7%">
+      <div class="w-50 d-flex flex-column justify-content-between mx-auto" style="position: relative;  top: 7vh; height: 65%;">
         <div class="h-75 p-block rounded-3 pt-2 pb-5 px-2 d-flex justify-content-center align-items-center">
           <div class="p4-content p4-content-active" data-content-index="1">
             <div class="h1">Яндекс&nbsp;Лицей год&nbsp;2 - Проект "Шахматы" на PyQT5</div>
